@@ -20,7 +20,7 @@ class ColumnRow extends StatelessWidget {
   Column dersleriColumnOlustur() {
     return Column(
       children: [
-        Expanded(
+        Expanded( //Expanded sığdırma widgetıdır
           child: containerOlustur('E', Colors.orange.shade700, margin: 10),
         ),
         Expanded(
