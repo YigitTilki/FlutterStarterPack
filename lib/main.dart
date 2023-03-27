@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:starterpack/columnRowBasics.dart';
+import 'package:starterpack/BasicApps/columnRowBasics.dart';
+import 'package:starterpack/BasicApps/counterPage.dart';
+import 'package:starterpack/BasicApps/imageWidget.dart';
 
 void main() {
   runApp(const MyApp());
