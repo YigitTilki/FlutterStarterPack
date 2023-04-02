@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:starterpack/BasicApps/basicButtons.dart';
 import 'package:starterpack/BasicApps/columnRowBasics.dart';
 import 'package:starterpack/BasicApps/counterPage.dart';
 import 'package:starterpack/BasicApps/imageWidget.dart';
@@ -12,6 +13,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ColumnRow();
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.teal,
+      ),
+      home: Scaffold(
+        appBar: AppBar(),
+        body: BasicButtons(),
+      ),
+    );
   }
 }
