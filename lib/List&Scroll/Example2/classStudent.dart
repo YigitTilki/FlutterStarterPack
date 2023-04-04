@@ -4,4 +4,9 @@ class Student {
   final String surName;
 
   Student(this.id, this.name, this.surName);
+
+  @override
+  String toString() {
+    return "Isım : $name Soyisim : $surName id : $id";
+  }
 }
