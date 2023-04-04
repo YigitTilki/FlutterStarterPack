@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:starterpack/BasicApps/basicButtons.dart';
 import 'package:starterpack/List&Scroll/Example1/card_listTile.dart';
 import 'package:starterpack/BasicApps/columnRowBasics.dart';
@@ -7,9 +8,11 @@ import 'package:starterpack/BasicApps/dropdownButton.dart';
 import 'package:starterpack/BasicApps/imageWidget.dart';
 import 'package:starterpack/BasicApps/popupMenu.dart';
 import 'package:starterpack/List&Scroll/Example2/listView.dart';
+import 'package:starterpack/List&Scroll/easyLoading.dart';
 
 void main() {
   runApp(const MyApp());
+  configLoading();
 }
 
 class MyApp extends StatelessWidget {
@@ -19,6 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: listViewEx(),
+      builder: EasyLoading.init(),
     );
   }
 }
