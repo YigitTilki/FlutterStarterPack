@@ -4,7 +4,7 @@
 import 'package:flutter/material.dart';
 
 class ColumnRow extends StatelessWidget {
-  const ColumnRow({ Key? key }) : super(key: key);
+  const ColumnRow({Key? key}) : super(key: key);
 
   Row dartRowOlustur() {
     return Row(
@@ -17,44 +17,33 @@ class ColumnRow extends StatelessWidget {
       ],
     );
   }
+
   Column dersleriColumnOlustur() {
     return Column(
       children: [
-        Expanded( //Expanded sığdırma widgetıdır
-          child: containerOlustur('E', Colors.orange.shade700, margin: 10),
+        Expanded(
+          //Expanded sığdırma widgetıdır
+          child: containerOlustur('E', Colors.orange.shade700, marginEdgeInsets: EdgeInsets.only(top: 10)),
         ),
         Expanded(
-          child: containerOlustur('R', Colors.orange.shade600, margin: 10),
+          child: containerOlustur('R', Colors.orange.shade600, marginEdgeInsets: EdgeInsets.only(top: 10)),
         ),
         Expanded(
-          child: containerOlustur('S', Colors.orange.shade500, margin: 10),
+          child: containerOlustur('S', Colors.orange.shade500, marginEdgeInsets: EdgeInsets.only(top: 10)),
         ),
         Expanded(
-          child: containerOlustur('L', Colors.orange.shade400, margin: 10),
+          child: containerOlustur('L', Colors.orange.shade400, marginEdgeInsets: EdgeInsets.only(top: 10)),
         ),
         Expanded(
-          child: containerOlustur('E', Colors.orange.shade300, margin: 10),
+          child: containerOlustur('E', Colors.orange.shade300, marginEdgeInsets: EdgeInsets.only(top: 10)),
         ),
         Expanded(
-          child: containerOlustur('R', Colors.orange.shade200, margin: 10),
+          child: containerOlustur('R', Colors.orange.shade200, marginEdgeInsets: EdgeInsets.only(top: 10)),
         ),
         Expanded(
-          child: containerOlustur('İ', Colors.orange.shade100, margin: 10),
+          child: containerOlustur('İ', Colors.orange.shade100, marginEdgeInsets: EdgeInsets.only(top: 10)),
         ),
       ],
-    );
-  }
-  Container containerOlustur(String harf, Color renk, {double margin = 0}) {
-    return Container(
-      height: 75,
-      width: 75,
-      color: renk,
-      margin: EdgeInsets.only(top: margin),
-      alignment: Alignment.center,
-      child: Text(
-        harf,
-        style: const TextStyle(fontSize: 48),
-      ),
     );
   }
 
@@ -83,4 +72,27 @@ class ColumnRow extends StatelessWidget {
       ),
     );
   }
+}
+
+Container containerOlustur(String string, Color renk,
+    {
+    EdgeInsets marginEdgeInsets = const EdgeInsets.all(0),
+    double height = 75,
+    double width = 75,
+    double font = 24,
+    Color textColor = Colors.white,
+    TextAlign textAlign = TextAlign.center,
+    Alignment alignment = Alignment.center}) {
+  return Container(
+    height: height,
+    width: width,
+    color: renk,
+    margin: marginEdgeInsets,
+    alignment: alignment,
+    child: Text(
+      string,
+      style: TextStyle(fontSize: font,color: textColor),
+      textAlign: textAlign,
+    ),
+  );
 }
