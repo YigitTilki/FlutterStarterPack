@@ -12,9 +12,16 @@ import 'package:starterpack/List&Scroll/Example2/listViewLayoutProblemleri.dart'
 import 'package:starterpack/List&Scroll/Example3/customScrollView&slivers.dart';
 import 'package:starterpack/List&Scroll/Example3/gridViewClass.dart';
 import 'package:starterpack/List&Scroll/easyLoading.dart';
+import 'package:starterpack/navigationApps/navMainPage.dart';
+import 'package:starterpack/navigationApps/ogrenci_detay.dart';
+import 'package:starterpack/navigationApps/orange_Page.dart';
+import 'package:starterpack/navigationApps/red_page.dart';
+import 'package:starterpack/navigationApps/yellow_page.dart';
+
+import 'navigationApps/routeGenerator.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
   configLoading();
 }
 
@@ -23,13 +30,24 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(body: CollapseToolBarEx(),),
-      builder: EasyLoading.init(),
+    return  MaterialApp(
+      title: 'Material App',
+      //home: AnaSayfa(),
+      /* routes: {
+        '/redPage': (context) => RedPage(),
+        '/ogrenciDetay' : (context)=>OgrenciDetay()
+        '/' : (context)=>AnaSayfa(),
+        '/orangePage': (context)=>OrangePage(),
+      },
+      
+      onUnknownRoute: (settings)=> MaterialPageRoute(builder: (context)=>Scaffold(
+        appBar: AppBar(title: Text('Error'),),
+        body: Center(child: Text('404'),),
+      )), */
+      onGenerateRoute: RouteGenerator.routeGenerator,
     );
   }
 }
-
 
 
 
